@@ -1,0 +1,210 @@
+/*******************************************************************************/
+/*     #general
+/*******************************************************************************/
+::-webkit-scrollbar {
+    width: 10px;
+}
+ 
+::-webkit-scrollbar-track {
+    // -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    // border-radius: 10px;
+    // background:darken(#eee, 10%);
+}
+ 
+::-webkit-scrollbar-thumb {
+	// @include transition-duration(0.5s);
+    // border-radius: 10px;
+    background:darken(#eee, 15%);
+    &:hover{
+    	// @include transition-duration(0.5s);
+    	background:darken(#eee, 25%);
+    }
+    // -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+
+
+body{
+	margin-top:50px;
+	font-family:arial, sans-serif;
+}
+h1{
+	font-weight:normal;
+	color:$mainColor;
+}
+h2{
+	font-weight:normal;
+}
+p{
+	font-size:13px;
+	line-height:20px;
+}
+a{
+	cursor: pointer;
+}
+.popupakses{
+	// display:none;
+	position:fixed;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	background:rgba(#000, 0.7);
+	z-index:80;
+	article{
+		position: absolute;
+		overflow-y: auto;
+		background:#fff;
+		padding:10px;
+		top:20%;
+		left:20%;
+		right:20%;
+		bottom:20%;
+		h2{
+			color:$mainColor;
+		}
+		.exit{
+			float:right;
+			cursor:pointer;
+		}
+	}
+}
+.popupsyarat{
+	@extend .popupakses;
+}
+a{
+	@include transition-duration(0.5s);
+	color:$mainColor;
+	text-decoration:none;
+	&:hover{
+		color:darken($mainColor, 20%)
+	}
+}
+
+ul{
+	padding:0;
+	clear:both;
+}
+li{
+	@extend p;
+	line-height:20px;
+	list-style:none;
+}
+.kanan{
+	float:right;
+}
+.kiri{
+	float:left;
+}
+input{
+	@include transition-duration(0.5s);
+	@extend p;
+	padding:8px 10px;
+	border:none;
+	border:solid 1px darken(#eee, 10%);
+	outline:none;
+	margin-bottom:10px;
+	&:focus{
+		@include transition-duration(0.5s);
+		border:solid 1px lighten(#444, 10%);
+	}
+}
+
+button{
+	@include tombol;
+	padding:8px 10px;
+}
+
+/*******************************************************************************/
+/*     #section
+/*******************************************************************************/
+section{
+	margin-bottom:50px !important;
+}
+.resp{
+	display:none;
+}
+
+form{
+	margin-bottom:15px;
+	overflow: hidden;
+	input{
+		width:85%;
+		max-width:200px;
+		float:left;
+		clear:left;
+
+	}
+	button{
+		clear:left;
+		float: left;
+	}
+
+}
+.iklan{
+	background:$mainColor;
+	position:relative;
+	.tagline{
+		background:$mainColor;
+		color:#fff;
+		padding:15px;
+		margin-top:-50px;
+		position:relative;
+	}
+	h2{
+		margin:0;
+	}
+	p{
+		margin:5px 0 15px 0;
+	}
+	img{
+		width:100%;
+	}
+	button{
+		@include tombol(#fff,$mainColor,0)
+	}
+}
+
+aside{
+	h1{
+		line-height:40px;
+		img{
+			display:block;
+		}
+	}
+}
+/*******************************************************************************/
+/*     #footer
+/*******************************************************************************/
+footer{
+	overflow: hidden;
+	border-top:solid 1px darken(#eee, 10%);
+	a{
+		i{
+			margin-left:5px;
+		}
+		.foundicon-youtube{
+			color:#cc0000;
+			&:hover{
+				color:darken(#cc0000, 10%)
+			}
+		}
+		.foundicon-rss{
+			color:orange;
+			&:hover{
+				color:darken(orange, 10%)
+			}
+		}
+		.foundicon-facebook{
+			color:darken($mainColor, 10%);
+			&:hover{
+				color:darken($mainColor, 20%);
+			}
+		}
+		.foundicon-google-plus{
+			color: darken(red, 10%);
+			&:hover{
+				color:darken(red, 20%);
+			}
+		}
+	}
+}
