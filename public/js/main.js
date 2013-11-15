@@ -31,17 +31,4 @@
     });
   });
 
-  $(function() {
-    $('.popupakses > div').scrooly({
-      step: 15,
-      opacity: 0.5,
-      speed: 200
-    });
-    return $('.popupsyarat > div').scrooly({
-      step: 15,
-      opacity: 0.5,
-      speed: 200
-    });
-  });
-
 }).call(this);

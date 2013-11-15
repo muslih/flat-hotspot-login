@@ -376,6 +376,13 @@ a {
   background: rgba(0, 0, 0, 0.7);
   z-index: 80;
 }
+.popupakses .exit, .popupsyarat .exit {
+  cursor: pointer;
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  color: #fff;
+}
 .popupakses article, .popupsyarat article {
   position: absolute;
   overflow-y: auto;
@@ -388,11 +395,6 @@ a {
 }
 .popupakses article h2, .popupsyarat article h2 {
   color: #0072c6;
-}
-.popupakses article .exit, .popupsyarat article .exit {
-  cursor: pointer;
-  position: fixed;
-  right: 22%;
 }
 
 a {
@@ -413,7 +415,6 @@ ul {
 }
 
 li {
-  line-height: 20px;
   list-style: none;
 }
 
@@ -746,14 +747,14 @@ footer a .foundicon-google-plus:hover {
     text-align: left;
   }
 
+  .popupakses .exit, .popupsyarat .exit {
+    right: 10px;
+  }
   .popupakses article, .popupsyarat article {
     top: 10%;
     bottom: 10%;
     left: 10%;
     right: 10%;
-  }
-  .popupakses article .exit, .popupsyarat article .exit {
-    right: 15%;
   }
 
   .iklan {
