@@ -27,10 +27,20 @@ $ ->
 	$('.caraAkses').click ->
 		$('body').css('overflow','hidden')
 		$('.popupakses').fadeIn(500)
+	
+	$('.popupakses').click ->
+		# console.log($(@))
+		$(@).fadeOut(500)
+		$('body').css('overflow','auto')
 
 	$('.syaratKetentuan').click ->
 		$('body').css('overflow','hidden')
 		$('.popupsyarat').fadeIn(500)
+	
+	$('.popupsyarat').click ->
+		# console.log($(@))
+		$(@).fadeOut(500)
+		$('body').css('overflow','auto')
 
 	$('.exit').click ->
 		$(@).parents('div').fadeOut(500)

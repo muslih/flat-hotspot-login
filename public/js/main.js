@@ -21,9 +21,17 @@
       $('body').css('overflow', 'hidden');
       return $('.popupakses').fadeIn(500);
     });
+    $('.popupakses').click(function() {
+      $(this).fadeOut(500);
+      return $('body').css('overflow', 'auto');
+    });
     $('.syaratKetentuan').click(function() {
       $('body').css('overflow', 'hidden');
       return $('.popupsyarat').fadeIn(500);
+    });
+    $('.popupsyarat').click(function() {
+      $(this).fadeOut(500);
+      return $('body').css('overflow', 'auto');
     });
     return $('.exit').click(function() {
       $(this).parents('div').fadeOut(500);
