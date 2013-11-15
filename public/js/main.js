@@ -18,13 +18,16 @@
     $('.popupakses').hide();
     $('.popupsyarat').hide();
     $('.caraAkses').click(function() {
+      $('body').css('overflow', 'hidden');
       return $('.popupakses').fadeIn(500);
     });
     $('.syaratKetentuan').click(function() {
+      $('body').css('overflow', 'hidden');
       return $('.popupsyarat').fadeIn(500);
     });
     return $('.exit').click(function() {
-      return $(this).parents('div').fadeOut(500);
+      $(this).parents('div').fadeOut(500);
+      return $('body').css('overflow', 'auto');
     });
   });
 

@@ -25,14 +25,28 @@ $ ->
 	$('.popupsyarat').hide()
 
 	$('.caraAkses').click ->
+		$('body').css('overflow','hidden')
 		$('.popupakses').fadeIn(500)
 
 	$('.syaratKetentuan').click ->
+		$('body').css('overflow','hidden')
 		$('.popupsyarat').fadeIn(500)
 
 	$('.exit').click ->
 		$(@).parents('div').fadeOut(500)
+		$('body').css('overflow','auto')
 
+$ ->
+	$('.popupakses > div').scrooly({
+		step: 15,
+		opacity: 0.5,
+		speed: 200
+	})
+	$('.popupsyarat > div').scrooly({
+		step: 15,
+		opacity: 0.5,
+		speed: 200
+	})
 
 # $ ->
 # 	$('.keranjang').hover ->
