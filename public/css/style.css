@@ -748,6 +748,7 @@ footer a .foundicon-google-plus:hover {
   }
 
   .popupakses .exit, .popupsyarat .exit {
+    top: 15px;
     right: 10%;
   }
   .popupakses article, .popupsyarat article {
