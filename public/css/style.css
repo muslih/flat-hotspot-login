@@ -397,6 +397,20 @@ a {
   color: #0072c6;
 }
 
+table {
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+table td {
+  vertical-align: top;
+  padding: 5px;
+}
+table p, table li, table input {
+  margin: 0;
+}
+
 a {
   -webkit-transition-duration: 0.5s;
   -moz-transition-duration: 0.5s;
@@ -413,8 +427,7 @@ ul {
   padding: 0;
   clear: both;
 }
-
-li {
+ul li {
   list-style: none;
 }
 

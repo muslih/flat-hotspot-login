@@ -73,6 +73,21 @@ a{
 		}
 	}
 }
+
+table{
+	@include transition-duration(0.5s);
+	// tr:hover{
+	// 	@include transition-duration(0.5s);
+	// 	background:darken(#fff, 3%);
+	// }
+	td{
+		vertical-align:top;
+		padding:5px ;
+	}
+	p{
+		margin:0;
+	}
+}
 .popupsyarat{
 	@extend .popupakses;
 }
@@ -88,11 +103,13 @@ a{
 ul{
 	padding:0;
 	clear:both;
+	li{
+		list-style:none;
+	}
 }
 li{
 	@extend p;
 	// line-height:20px;
-	list-style:none;
 }
 .kanan{
 	float:right;
