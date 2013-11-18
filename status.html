@@ -6,7 +6,10 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>STIKESMB Hotspot Login</title>
+        <title>STIKESMB Hotspot > Status</title>
+        $(if refresh-timeout)
+        <meta http-equiv="refresh" content="$(refresh-timeout-secs)">
+        $(endif)
         <meta name="description" content="">
         <meta content='width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;' name='viewport' />
         <meta name="viewport" content="width=device-width">
@@ -16,8 +19,39 @@
         <link rel="stylesheet" href="public/css/style.css">
 
         <script src="public/js/vendor/modernizr-2.6.2.min.js"></script>
+        <script language="JavaScript">
+        <!--
+        $(if advert-pending == 'yes')
+            var popup = '';
+            function focusAdvert() {
+          if (window.focus) popup.focus();
+            }
+            function openAdvert() {
+          popup = open('$(link-advert)', 'hotspot_advert', '');
+          setTimeout("focusAdvert()", 1000);
+            }
+        $(endif)
+            function openLogout() {
+          if (window.name != 'hotspot_status') return true;
+                open('$(link-logout)', 'hotspot_logout', 'toolbar=0,location=0,directories=0,status=0,menubars=0,resizable=1,width=280,height=250');
+          window.close();
+          return false;
+            }
+        //-->
+        </script>
     </head>
     <body>
+    <script language="JavaScript">
+    <!--
+        function openLogin() {
+      if (window.name != 'hotspot_logout') return true;
+      open('$(link-login)', '_blank', '');
+      window.close();
+      return false;
+        }
+    //-->
+    </script>
+
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
@@ -125,11 +159,91 @@
                           <h1>
                             <img src="public/img/hotspot.png" alt="">
                             Hotspot Login <br> STIKESMB</h1>
-                           <form action="#">
-                               <input type="text" placeholder="NPM / NIP">
-                               <input type="password" placeholder ="Kata sandi">
-                               <button>Masuk</button>
-                           </form>
+                            <!-- :awal-login-form -->
+<form action="$(link-logout)" name="logout" onSubmit="return openLogout()">
+<table class="tabula" >  
+$(if login-by == 'trial')
+<tr>
+  <td colspan="3">
+    <p><strong>Selamat datang user trial!</strong></p>
+  </td>
+</tr>
+$(elif login-by != 'mac')
+<tr>
+  <td colspan="3">
+    <p>
+       <strong>Selamat datang $(username)!</strong>
+    </p>
+  </td>
+</tr>
+$(endif)
+<tr>
+  <td><p>Alamat IP</p></td>
+  <td>
+    <p>:</p>
+  </td>
+  <td><p>$(ip)</p></td>
+</tr>
+<tr>
+  <td><p>Bytes up/down:</p></td>
+  <td>
+    <p>:</p>
+  </td>
+  <td><p>$(bytes-in-nice) / $(bytes-out-nice)</p></td>
+</tr>
+$(if session-time-left)
+<tr>
+  <td><p>Connected / left</p></td>
+  <td>
+    <p>:</p>
+  </td>
+  <td><p>$(uptime) / $(session-time-left)</p></td>
+</tr>
+$(else)
+<tr>
+  <td><p>Connected</p></td>
+  <td>
+    <p>:</p>
+  </td>
+  <td><p>$(uptime)</p></td>
+</tr>
+$(endif)
+
+$(if blocked == 'yes')
+<tr>
+  <td><p>Status</p></td>
+  <td>
+    <p>:</p>
+  </td>
+  <td>
+    <a href="$(link-advert)" target="hotspot_advert">advertisement</a> 
+  </td>
+</tr>
+$(elif refresh-timeout)
+<tr>
+  <td><p>Status refresh</p></td>
+  <td>
+    <p>:</p>
+  </td>
+  <td>
+    <p>$(refresh-timeout)</p>
+  </td>
+</tr>
+$(endif)
+
+  
+  <td colspan="3">
+  $(if login-by-mac != 'yes')
+  <!-- <input type="submit" value="log off"> -->
+  <button>Keluar</button>
+  $(endif)
+  </form>
+  </form>
+  </td>
+</tr>
+
+</table>
+
 
                            <ul class="resp" >
                               <p>
@@ -141,23 +255,9 @@
                                <li class="syaratKetentuan">
                                     <a >Syarat dan Ketentuan</a>
                                </li>
-                               <!-- <li><a href="#">Dua</a></li>
-                               <li><a href="#">Tiga</a></li>
-                               <li><a href="#">Empat</a></li>
-                               <li><a href="#">Lima</a></li> -->
+                               
                            </ul>
-                           <ul class="full">
-                              
-                              <li> 
-                                Belum memiliki akun? <a >Daftar Sekarang</a>
-                              </li>
-                              <li>
-                                <a>Lupa kata sandi</a>
-                              </li>
-                              <li>
-                                <a>F.A.Q</a>
-                              </li>
-                           </ul>
+                           
                        </aside>
                    </section>
                    <footer class="baris">
@@ -187,11 +287,9 @@
                </div>       
 
 
-       
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="public/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
         <script src="public/js/plugins.js"></script>
-        <script src="public/js/main.js"></script>
-
-       
+        <script src="public/js/main.js"></script>       
     </body>
 </html>

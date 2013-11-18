@@ -16,6 +16,16 @@
         <link rel="stylesheet" href="public/css/style.css">
 
         <script src="public/js/vendor/modernizr-2.6.2.min.js"></script>
+        <script language="JavaScript">
+        <!--
+            function startClock() {
+                $(if popup == 'true')
+                open('$(link-status)', 'hotspot_status', 'toolbar=0,location=0,directories=0,status=0,menubars=0,resizable=1,width=290,height=200');
+          $(endif)
+          location.href = '$(link-redirect)';
+            }
+        //-->
+</script>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -125,11 +135,11 @@
                           <h1>
                             <img src="public/img/hotspot.png" alt="">
                             Hotspot Login <br> STIKESMB</h1>
-                           <form action="#">
-                               <input type="text" placeholder="NPM / NIP">
-                               <input type="password" placeholder ="Kata sandi">
-                               <button>Masuk</button>
-                           </form>
+                            <!-- :awal-login-form -->
+                          <p>
+                            Anda sudah berhasil masuk kedalam jaringan hotspot. Bila tidak terjadi apapun, silahkan klik <a href="$(link-redirect)">disini</a>
+
+                          </p>
 
                            <ul class="resp" >
                               <p>
@@ -146,18 +156,7 @@
                                <li><a href="#">Empat</a></li>
                                <li><a href="#">Lima</a></li> -->
                            </ul>
-                           <ul class="full">
-                              
-                              <li> 
-                                Belum memiliki akun? <a >Daftar Sekarang</a>
-                              </li>
-                              <li>
-                                <a>Lupa kata sandi</a>
-                              </li>
-                              <li>
-                                <a>F.A.Q</a>
-                              </li>
-                           </ul>
+                          
                        </aside>
                    </section>
                    <footer class="baris">
@@ -187,11 +186,9 @@
                </div>       
 
 
-       
+        
         <script>window.jQuery || document.write('<script src="public/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
         <script src="public/js/plugins.js"></script>
-        <script src="public/js/main.js"></script>
-
-       
+        <script src="public/js/main.js"></script>      
     </body>
 </html>
